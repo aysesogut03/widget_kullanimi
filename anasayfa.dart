@@ -11,6 +11,8 @@ class _AnasayfaState extends State<Anasayfa> {
   var tfController = TextEditingController();
   String alinanVeri = "";
   String resimAdi = "mutlu.png";
+  bool switchKontrol=false;
+  bool checkboxKontrol=false;
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +61,46 @@ class _AnasayfaState extends State<Anasayfa> {
                 ),
               ],
             ),
+
+            SizedBox(width: 200,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+
+                  SwitchListTile
+                    ( title: const Text("Dart"),
+                      controlAffinity: ListTileControlAffinity.leading,
+                      value:switchKontrol,
+                      onChanged: (veri)
+                  {
+                    setState(() {
+                      switchKontrol=veri;
+                    });
+                  })
+                ],
+              ),
+            ),
+
+            SizedBox(width: 200,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+
+                  CheckboxListTile
+                    ( title: const Text("Flutter"),
+                      controlAffinity: ListTileControlAffinity.leading,
+                      value:checkboxKontrol,
+                      onChanged: (veri)
+                      {
+                        setState(() {
+                          switchKontrol=veri!;
+                        });
+                      })
+                ],
+              ),
+            ),
+
+
           ],
         ),
       ),
